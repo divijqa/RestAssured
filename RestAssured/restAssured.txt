@@ -1,0 +1,68 @@
+Rest assured:
+  HTTP Methods:
+     >Get
+     >Post
+     >Put
+     >Patch
+     >Delete
+     >Options
+     >Head
+> Eclipse and Maven config
+   >pom> Rest assure dependency
+   > add >in class 
+      import static org.hamcrest.Matchers.*;
+      import static com.jayway.restassured.RestAssured.*;
+
+
+>download studentApp.Jar <Spring framework> https://www.udemy.com/rest-api-testing-with-rest-assuredpostman-part1/learn/v4/t/lecture/6716462?start=0
+ > command lind ---->   cd to jar loacation and type java -jar studentApp.jar
+ > check in whether jar is istalled  by localhost:8080/student/list
+  > 0r java -jar studentApp.jar --server.port=8085 <for differentport>
+
+>POSTMAN
+ > creating collections & adding environments>
+                   > host folder
+                   > servise requests folder <GET,POST,etc>
+                   > set environment variable for localhost ex: key :url and value http://localhost:8080 & save
+                   > hit GET request with {{url}}/student/list
+                   
+ >GET Request(getting information about resources): 
+                   > {{url}}/student/list                                    <complete list>
+                   > {{url}}/student/1                                       <student with id:1>
+                   > {{url}}/student/list?programme=Computer Science         <list of CS students> <200 success>
+                   > {{url}}/student/list?programme=Computer Science&limit=2 <limits to 2 students>
+                   > {{url}}/student/list
+                   > {{url}}/student/list?limit=-2                           <400 bad request>
+ > POST Request (Adding info)
+                   > POST <{{url}}/student> 
+                   > body>Text type JSON
+                   > Add studnt info
+                   > send <201 created>  if student is successfully added.
+ > PUT Request (update info of existing student)
+                   > PUT <{{url}}/student/101> 
+                   > body>Text type JSON
+                   > update studemt info
+                   > Send <200 ok>
+ > PATCH Request (update selected info of existing student)
+                   > POST <{{url}}/student/101>
+                   > body>Text type JSON
+                   > update email
+                   > send <200 ok>
+ > DELETE Request (delete student)
+                   > DELETE <{{url}}/student/101>
+                   > send <204 no content> successfully deleted id:101
+ > OPTIONS Request (to get info on particular resource)
+                   > OPTIONS <{{url}}/student> 
+                   > Headers
+                   > OPTIONS <{{url}}/student/1> 
+ > HEAD Request ()
+                   > HEAD<{{url}}/student/1>
+                   > no body
+                   > headers
+
+> Rest Assured :
+       IT is open source java library used for restAPI database testing.
+       > setup>http://rest-assured.io/
+       > add 
+
+  
