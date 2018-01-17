@@ -13,7 +13,7 @@ public class studentGetTest {
 	public static void init(){
 		
 		RestAssured.baseURI ="http://localhost";
-		RestAssured.port = 8080;
+		RestAssured.port = 8085;
 		RestAssured.basePath = "/student";
 	}
 	
@@ -46,14 +46,30 @@ public class studentGetTest {
 		Response response = given()
 		//given()
 		.when()
-		.get("/1");
+		.get("/2");
 		System.out.println(response.body().prettyPrint());
 		
 		given()
 		.when()
-		.get("/1")
+		.get("/2")
 		.then()
 		.statusCode(200);
+	}
+	
+	@Test
+	public void getStudentsFromFA(){
+		Response response = given()
+		.when()
+		.get("/list?programme=Financial Analysis&limit=2");
+		System.out.println(response.body().prettyPeek());
+		
+		Response response2 = given()
+		.param("programme","Financial Analysis")
+		.param("limit", 2)
+		.when()
+		.get("/list");
+		System.out.println(response2.body().prettyPeek());
+				
 	}
 	
 	
