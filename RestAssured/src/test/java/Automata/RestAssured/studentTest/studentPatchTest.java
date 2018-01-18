@@ -26,16 +26,16 @@ public class studentPatchTest {
 	@Test
 	public void patchOneStudent(){
 		ArrayList<String> courses = new ArrayList<>();
-		courses.add("Testing");
-		courses.add("Automation");
+//		courses.add("Testing");
+//		courses.add("Automation");
 		courses.add("PerformanceEngineer");
 		courses.add("APITester");
 		
 		studentDetails student = new studentDetails();
-		student.setFirstName("huge");
-		student.setLastName("jackman");
+//		student.setFirstName("huge");
+//		student.setLastName("jackman");
 		student.setEmail("huge.jackman@qatester.org");
-		student.setProgramme("SQA");
+//		student.setProgramme("SQA");
 		student.setCourses(courses);
 		
 		Response response = given()
@@ -55,36 +55,36 @@ public class studentPatchTest {
 	
 	}
 	
-	@Test
-	public void patchSecondStudent(){
-		ArrayList<String> courses = new ArrayList<>();
-		courses.add("Testing");
-		courses.add("Automation");
-		courses.add("PerformanceEngineer");
-		courses.add("APITester");
-		
-		studentDetails student = new studentDetails();
-		student.setFirstName("Divj");
-		student.setLastName("M");
-		student.setEmail("divij.m@qatestschool.org");
-		student.setProgramme("SQA");
-		student.setCourses(courses);
-		
-		Response response = given()
-		.contentType(ContentType.JSON)
-		.when()
-		.body(student)
-		.patch("/105");
-		System.out.println(response.body().prettyPeek());
-		
-		given()
-		.contentType(ContentType.JSON)
-		.when()
-		.body(student)
-		.patch("/105")
-		.then()
-		.statusCode(200);
-	
-	}
+//	@Test
+//	public void patchSecondStudent(){
+//		ArrayList<String> courses = new ArrayList<>();
+//		courses.add("Testing");
+//		courses.add("Automation");
+//		courses.add("PerformanceEngineer");
+//		courses.add("APITester");
+//		
+//		studentDetails student = new studentDetails();
+//		student.setFirstName("Divj");
+//		student.setLastName("M");
+//		student.setEmail("divij.m@qatestschool.org");
+//		student.setProgramme("SQA");
+//		student.setCourses(courses);
+//		
+//		Response response = given()
+//		.contentType(ContentType.JSON)
+//		.when()
+//		.body(student)
+//		.patch("/105");
+//		System.out.println(response.body().prettyPeek());
+//		
+//		given()
+//		.contentType(ContentType.JSON)
+//		.when()
+//		.body(student)
+//		.patch("/105")
+//		.then()
+//		.statusCode(200);
+//	
+//	}
 	
 }
