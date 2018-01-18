@@ -55,36 +55,36 @@ public class studentPatchTest {
 	
 	}
 	
-//	@Test
-//	public void patchSecondStudent(){
-//		ArrayList<String> courses = new ArrayList<>();
+	@Test
+	public void patchSecondStudent(){
+		ArrayList<String> courses = new ArrayList<>();
 //		courses.add("Testing");
 //		courses.add("Automation");
-//		courses.add("PerformanceEngineer");
-//		courses.add("APITester");
-//		
-//		studentDetails student = new studentDetails();
+		courses.add("PerformanceEngineer");
+		courses.add("APITester");
+		
+		studentDetails student = new studentDetails();
 //		student.setFirstName("Divj");
 //		student.setLastName("M");
-//		student.setEmail("divij.m@qatestschool.org");
+		student.setEmail("divij.m@qatestschool.org");
 //		student.setProgramme("SQA");
-//		student.setCourses(courses);
-//		
-//		Response response = given()
-//		.contentType(ContentType.JSON)
-//		.when()
-//		.body(student)
-//		.patch("/105");
-//		System.out.println(response.body().prettyPeek());
-//		
-//		given()
-//		.contentType(ContentType.JSON)
-//		.when()
-//		.body(student)
-//		.patch("/105")
-//		.then()
-//		.statusCode(200);
-//	
-//	}
+		student.setCourses(courses);
+		
+		Response response = given()
+		.contentType(ContentType.JSON)
+		.when()
+		.body(student)
+		.patch("/105");
+		System.out.println(response.body().prettyPeek());
+		
+		given()
+		.contentType(ContentType.JSON)
+		.when()
+		.body(student)
+		.patch("/105")
+		.then()
+		.statusCode(200);
+	
+	}
 	
 }
